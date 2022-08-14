@@ -1,0 +1,33 @@
+body {
+    min-height: 100vh;
+}
+
+.img-sidebar {
+    width: 35%;
+    height: 100vh;
+    position: relative;
+}
+
+.img-sidebar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-overlay {
+    position: absolute;
+    box-sizing: border-box;
+    top: 20%;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    background-color: #1e1e1e;
+    opacity: 70%;
+    padding: 30px;
+}
+
+.sidebar-overlay > h1 {
+    font-size: 1.5rem;
+    color: #e3e3e3;
+}
+
