@@ -4,8 +4,8 @@ document.querySelectorAll(`input[type="text"]`).forEach(input => {
 });
 
 function validateName(e) {
-    const regex = /([a-zA-Z])/g;
-    if (regex.test(this.value)) {
+    const regex = /([^a-z A-Z])/g;
+    if (!regex.test(this.value)) {
         this.classList.remove("invalid");
         this.classList.add("valid");
     }
@@ -16,9 +16,9 @@ function validateName(e) {
 }
 
 function eagerValidate(e) {
-    const regex = /([a-zA-Z])/g;
+    const regex = /([^a-z A-Z])/g;
     if (this.classList.contains("invalid")) {
-        if (regex.test(this.value)) {
+        if (!regex.test(this.value)) {
             this.classList.remove("invalid");
             this.classList.add("valid");
         }
