@@ -90,6 +90,14 @@ body {
     font-size: 1.05rem;
 }
 
-.form-item > input:invalid {
+input:focus {
+    outline: 0;
+}
+
+input.invalid {
     border-color: rgb(200, 0, 0);
+}
+
+input.valid {
+    border-color: green;
 }
