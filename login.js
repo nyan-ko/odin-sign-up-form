@@ -5,7 +5,10 @@ document.querySelectorAll(`input[type="text"]`).forEach(input => {
 
 function validateName(e) {
     const regex = /([^a-z A-Z])/g;
-    if (!regex.test(this.value)) {
+    if (this.value === '') {
+        return;
+    }
+    else if (!regex.test(this.value)) {
         this.classList.remove("invalid");
         this.classList.add("valid");
     }
@@ -17,14 +20,20 @@ function validateName(e) {
 
 function eagerValidate(e) {
     const regex = /([^a-z A-Z])/g;
-    if (this.classList.contains("invalid")) {
-        if (!regex.test(this.value)) {
+    if (this.value === '') {
+        this.classList.add("invalid");
+        this.classList.remove("valid");
+    }
+    else if (!regex.test(this.value)) {
+        if (this.classList.contains("invalid")) {
             this.classList.remove("invalid");
             this.classList.add("valid");
         }
     }
-    else if (this.value === '') {
-        this.classList.add("invalid");
-        this.classList.remove("valid");
+    else {
+        if (this.classList.contains("invalid") || this.classList.contains("valid")) {
+            this.classList.add("invalid");
+            this.classList.remove("valid");
+        }
     }
 }
