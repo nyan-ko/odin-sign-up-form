@@ -1,6 +1,6 @@
 document.querySelectorAll(`input[type="text"]`).forEach(input => {
     input.addEventListener('focusout', validateName);
-    input.addEventListener('keyup', eagerValidate);
+    input.addEventListener('input', eagerValidate);
 });
 
 function validateName(e) {
