@@ -1,6 +1,6 @@
 document.querySelectorAll(`input[type="text"]`).forEach(input => {
     input.addEventListener('focusout', validateName);
-    input.addEventListener('input', eagerValidate);
+    input.addEventListener('input', eagerValidateName);
 });
 
 function validateName(e) {
@@ -18,7 +18,7 @@ function validateName(e) {
     }
 }
 
-function eagerValidate(e) {
+function eagerValidateName(e) {
     const regex = /([^a-z A-Z])/g;
     if (this.value === '') {
         this.classList.add("invalid");
